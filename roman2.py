@@ -16,7 +16,7 @@ C = Canvas(window, bg = "blue", height = (size * 8) + padding + padding, width =
 
 for x in range(8):
     for y in range(8):
-        fill_color = 'white' if (x + y) % 2 else '#8B4513' 
+        fill_color = '#8B4513' if (x + y) % 2 else 'white' 
         start_x = (x * size) + padding
         start_y = (y * size) + padding
         rect = C.create_rectangle(start_x, start_y, start_x + size, start_y + size, fill=fill_color, width=0)
