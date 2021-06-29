@@ -59,4 +59,11 @@ window.mainloop()
 
 
 
+class Figure:
+    def __init__(self, img, name):
+        self.value = name
+        self.img = Photoimage(file = img).subsample(3,3)
+    def position(self, x, y):
+        C.create_image(x, y, anchor = NW, image = self.img)
+
 
