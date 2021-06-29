@@ -16,7 +16,6 @@ gameboard_start = 40
 total_size = (size * 8) + (padding * 2) + (gameboard_start * 2)
 
 C = Canvas(window, bg = "gray", height = total_size, width = total_size)
-
 # coord = 10, 50, 240, 210
 
 
@@ -51,8 +50,11 @@ for x in range(8):
 
 C.pack()
 
-img = PhotoImage(file="icons/black horse.png")
-C.create_image(60,60, anchor=NW, image=img)
+img_bh = PhotoImage(file="icons/black horse.png")
+image_bh = img_bh.subsample(3,3)
+# img_b = ["icons/black horse.png", "icons/black queen.png", "icons/black king.png", "icons/black слон.png", "icons/black ферзь.png", "icons/black пешка.png"]
+# img_w = ["icons/white horse.png", "icons/white queen.png", "icons/white king.png", "icons/white слон.png", "icons/white ферзь.png", "icons/white пешка.png"]
+C.create_image(90,40, anchor=NW, image=image_bh)
 window.mainloop()
 
 
