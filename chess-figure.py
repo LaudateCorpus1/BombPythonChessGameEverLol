@@ -52,7 +52,8 @@ C.pack()
 
 img_bh = PhotoImage(file="icons/black horse.png")
 image_bh = img_bh.subsample(3,3)
-img_b = ["icons/black horse.png", "icons/black queen.png", "icons/black king.png", "icons/black слон.png", "icons/black ферзь.png", "icons/black пешка.png"]
+img_b = ["icons/black horse.png", "icons/black horse.png", "icons/black queen.png", "icons/black king.png",\
+    "icons/black слон.png","icons/black слон.png", "icons/black ферзь.png", "icons/black ферзь.png", "icons/black пешка.png"]
 # img_w = ["icons/white horse.png", "icons/white queen.png", "icons/white king.png", "icons/white слон.png", "icons/white ферзь.png", "icons/white пешка.png"]
 C.create_image(90,40, anchor=NW, image=image_bh)
 
@@ -63,11 +64,12 @@ class Figure:
     def __init__(self, img):
         self.img = PhotoImage(file = img).subsample(3,3)
     def position(self, x, y):
-        C.create_image(x, y, anchor = NW, image = self.img)
+        return C.create_image(x, y, anchor = NW, image = self.img)
 
 
 Figures = [Figure(x) for x in img_b ]
 
-for I in range(40, 300, 90)
+for I in range(8):
+        Figures[I].position(I*40, I*50)
 
 window.mainloop()
